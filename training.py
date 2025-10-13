@@ -115,23 +115,21 @@ def train_model(norm_mileages, norm_prices):
 
     for i in range(iter):
         sum_theta0 = 0
-        for j in range(m):
-            estimation = theta0 + (theta1 * norm_mileages[j])
-            error = estimation - norm_prices[j]
-            sum_theta0 = sum_theta0 + error
-        tmp_theta0 = learning_rate * (sum_theta0 / m)
-        
         sum_theta1 = 0
         for j in range(m):
             estimation = theta0 + (theta1 * norm_mileages[j])
             error = estimation - norm_prices[j]
+            sum_theta0 = sum_theta0 + error
             sum_theta1 = sum_theta1 + (error * norm_mileages[j])
+        tmp_theta0 = learning_rate * (sum_theta0 / m)
         tmp_theta1 = learning_rate * (sum_theta1 / m)
 
         theta0 = theta0 - tmp_theta0
         theta1 = theta1 - tmp_theta1
+
         if i % 100 == 0:
             print(f"Itération {i}: {Colors.BLUE}θ₀={theta0:.6f}{Colors.END}, {Colors.RED}θ₁={theta1:.6f}{Colors.END}")
+
     theta0, theta1 = denormalize_data(theta0, theta1, mileages, prices)
     return theta0, theta1
 
