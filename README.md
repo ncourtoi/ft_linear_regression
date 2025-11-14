@@ -85,15 +85,15 @@ Estimated price: 8500 €
 
 During peer-evaluation, your project will be checked for:
 
-- ❌ No use of pre-built regression libraries.
+- No use of pre-built regression libraries.
 
-- 🧩 Correct implementation of the linear hypothesis.
+- Correct implementation of the linear hypothesis.
 
-- ⚖️ Correct gradient descent update rule.
+- Correct gradient descent update rule.
 
-- 💾 Proper saving/loading of model parameters.
+- Proper saving/loading of model parameters.
 
-- 🧮 Bonus: Data visualization or precision computation.
+- Bonus: Data visualization or precision computation.
 
 ## 💡 Author
 
